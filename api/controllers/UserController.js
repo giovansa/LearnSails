@@ -49,18 +49,12 @@ module.exports = {
 	},
 
 	updating: function(req, res, next){
-		var n_user = req.allParams();
-		console.log(n_user);
-		User.findOne(n_user.id, function(err, user){
-			if(err)return next(err);
-			if(!user)return next();
-
-			user.update({username:n_user.username}, {user_gender:n_user.user_gender}).exec(function result(err, updated){
-				//console.log(err);
-				console.log(updated.username)
-				if(err)return next(err);
-				res.redirect('user/index');
-			});
+		console.log(req.param('id'));
+		User.update(req.param('id'), req.params.all(), function userUpdated(err){
+			if(err){
+				return res.redirect('/user/update/'+req.param('id'));
+			}
+			res.redirect('user/show/'+req.param('id'));
 		});
 	},
 
