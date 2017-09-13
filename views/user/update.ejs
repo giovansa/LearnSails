@@ -1,7 +1,7 @@
 <h1>Update</h1>
 <hr>
 <form  action="/user/updating" method="post">
-  <input type="hidden" name="" value="<%= user.id %>">
+  <input type="hidden" name="id" value="<%= user.id %>">
   Username <input type="text" name="username" value="" placeholder="<%= user.username %>">
   Gender <input type="text" name="user_gender" value="" placeholder="<%= user.user_gender %>">
   <input type="submit" name="" value="Edit">
