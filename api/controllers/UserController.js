@@ -29,4 +29,15 @@ module.exports = {
 		});
 	},
 
+	index: function(req, res, next){
+		User.find(function foundUser(err, users){
+			if(err)return next(err);
+
+			res.view('user/index',{
+				users:users
+			});
+		});
+	},
+
+
 };
