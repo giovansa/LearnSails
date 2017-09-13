@@ -6,13 +6,8 @@
  */
 
 module.exports = {
-
+  
   attributes: {
-    id: {
-      type: 'integer',
-      autoIncrement: true,
-      required: true,
-    },
     username:{
       type: 'string',
     },

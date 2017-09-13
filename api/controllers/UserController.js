@@ -11,11 +11,11 @@ module.exports = {
 		return res.view('user/new');
 	},
 
-	create: function(req, res. next){
-		User.create.(req.params.all(), function userCreated(err, user){
+	create: function(req, res, next){
+		User.create(req.params.all(), function userCreated(err, user){
 			if(err)return next(err);
 
-			res.redirect('/customer/show', +user.id);
+			res.redirect('/user/show/'+user.id);
 		});
 	},
 
@@ -28,5 +28,5 @@ module.exports = {
 			});
 		});
 	},
-	
+
 };
