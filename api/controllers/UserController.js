@@ -58,4 +58,13 @@ module.exports = {
 		});
 	},
 
+	destroy: function(req, res, next){
+		User.destroy(req.param('id')).exec(function(){
+			res.redirect('/user/');
+		});
+	},
+
+
+
+
 };
