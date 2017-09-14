@@ -3,4 +3,9 @@
 <h3>Username : <%= user.username %></h3>
 <h4>Gender : <%= user.user_gender %></h4>
 
+<form action="/stock/new" method="post">
+  <input type="hidden" name="" value="<%= customer.id %>" name="owner">
+  <input type="submit" name="" value="Add Stock">
+</form>
+
 <a href="/user">Back</a>
